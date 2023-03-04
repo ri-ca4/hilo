@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#intro{
+    margin: 5vh 0 0 0;
+}
+
+#board{
+    display: flex;
+    flex-direction: row;
+}
+
+#deck,
+#card{
+    width: 40vw;
+    max-width: 200px;
+    height: 60vw;
+    max-height: 300px;
+    margin: 5vw;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#deck{
+    background-color: #6495ed;
+}
+
+#card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#number{
+    font-size: 5em;
+}
+
+#suit{
+    width: 10vw;
+}
+
+button{
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    padding: 1px;
+    font-size: 2em;
+}

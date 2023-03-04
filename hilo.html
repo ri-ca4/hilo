@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hi Lo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/hilo.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container">
+            <div id="intro">
+                <h1>High Card Low Card</h1>
+                <p>Guess if the next card will be higher or lower than the card shown (Aces are low)</p>
+            </div>
+            <div id="board">
+                <div id="deck"></div>
+                <div id="card">
+                    <h1 id="number"></h1>
+                    <img id="suit"/>
+                </div>
+            </div>
+            <div id="buttons">
+                <button id="high">Higher</button>
+                <button id="low">Lower</button>
+            </div>
+            <h1 id="status"></h1>
+        </div>
+        
+        <script src="./js/hilo.js" async defer></script>
+    </body>
+</html>
