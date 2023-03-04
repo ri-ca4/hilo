@@ -61,7 +61,9 @@ high.addEventListener('click', ()=>{
         stat.innerHTML='correct'
     }
     currentCard = nextCard;
-    dispCard.innerHTML = currentCard.value.face + currentCard.suit;
+    dispNum.innerHTML = currentCard.value.face;
+    dispSuit.setAttribute('src', `img/${currentCard.suit}.png`);
+    dispSuit.setAttribute('alt', currentCard.suit);
 })
 
 low.addEventListener('click', ()=>{
@@ -75,5 +77,7 @@ low.addEventListener('click', ()=>{
         stat.innerHTML='correct'
     }
     currentCard = nextCard;
-    dispCard.innerHTML = currentCard.value.face + currentCard.suit;
+    dispNum.innerHTML = currentCard.value.face;
+    dispSuit.setAttribute('src', `img/${currentCard.suit}.png`);
+    dispSuit.setAttribute('alt', currentCard.suit);
 })
