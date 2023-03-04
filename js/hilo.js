@@ -15,8 +15,6 @@ function newDeck(){
     return deck;
 };
 
-var deck = newDeck();
-
 function shuffle(deck){
     for(i=deck.length-1; i>0; i--){
         const j = Math.floor(Math.random() * (i + 1));
@@ -26,29 +24,41 @@ function shuffle(deck){
     return deck;
 };
 
-shuffle(deck);
-
 function newCard(){
     var card = deck.pop();
     return card;
 }
 
-var currentCard = newCard();
-var dispCard = document.getElementById('card');
-dispCard.innerHTML = currentCard.value.face + currentCard.suit;
+var deck;
+var currentCard;
+var dispNum  = document.getElementById('number');
+var dispSuit = document.getElementById('suit');
 
+function newGame(){
+    deck = newDeck();
+    shuffle(deck);
+    currentCard = newCard(); 
+    dispNum.innerHTML = currentCard.value.face;
+    dispSuit.setAttribute('src', `img/${currentCard.suit}.png`);
+    dispSuit.setAttribute('alt', currentCard.suit);
+}
 
-var high = document.getElementById('high');
-var low  = document.getElementById('low');
+newGame();
+
+var high   = document.getElementById('high');
+var low    = document.getElementById('low');
+var stat = document.getElementById('status');
+
 
 high.addEventListener('click', ()=>{
     nextCard = newCard();
     if(nextCard.value.value == currentCard.value.value){
-        alert('same value')
+        stat.innerHTML='same value'
     }else if(nextCard.value.value < currentCard.value.value){
         alert('loss')
+        newGame();
     }else{
-        alert('win')
+        stat.innerHTML='correct'
     }
     currentCard = nextCard;
     dispCard.innerHTML = currentCard.value.face + currentCard.suit;
@@ -57,11 +67,12 @@ high.addEventListener('click', ()=>{
 low.addEventListener('click', ()=>{
     nextCard = newCard();
     if(nextCard.value.value == currentCard.value.value){
-        alert('same value')
+        stat.innerHTML='same value'
     }else if(nextCard.value.value > currentCard.value.value){
         alert('loss')
+        newGame();
     }else{
-        alert('win')
+        stat.innerHTML='correct'
     }
     currentCard = nextCard;
     dispCard.innerHTML = currentCard.value.face + currentCard.suit;
