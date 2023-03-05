@@ -68,10 +68,16 @@ high.addEventListener('click', ()=>{
         score++;
         dispScore.innerHTML= score;
     }
-    currentCard = nextCard;
-    dispNum.innerHTML = currentCard.value.face;
-    dispSuit.setAttribute('src', `img/${currentCard.suit}.png`);
-    dispSuit.setAttribute('alt', currentCard.suit);
+    
+    if(deck.length == 0){
+        alert("Winner!");
+        newGame();
+    }else{
+        currentCard = nextCard;
+        dispNum.innerHTML = currentCard.value.face;
+        dispSuit.setAttribute('src', `img/${currentCard.suit}.png`);
+        dispSuit.setAttribute('alt', currentCard.suit);
+    }
 })
 
 low.addEventListener('click', ()=>{
@@ -87,8 +93,13 @@ low.addEventListener('click', ()=>{
         score++;
         dispScore.innerHTML= score;
     }
-    currentCard = nextCard;
-    dispNum.innerHTML = currentCard.value.face;
-    dispSuit.setAttribute('src', `img/${currentCard.suit}.png`);
-    dispSuit.setAttribute('alt', currentCard.suit);
+    if(deck.length == 0){
+        alert("Winner!");
+        newGame();
+    }else{
+        currentCard = nextCard;
+        dispNum.innerHTML = currentCard.value.face;
+        dispSuit.setAttribute('src', `img/${currentCard.suit}.png`);
+        dispSuit.setAttribute('alt', currentCard.suit);
+    }
 })
