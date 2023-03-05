@@ -22,7 +22,13 @@
                 <p>Guess if the next card will be higher or lower than the card shown (Aces are low)</p>
             </div>
             <div id="board">
-                <div id="deck"></div>
+                <div id="deck">
+                    <div id="status">
+                        <h2>Score:</h2>
+                        <h1 id="score"></h1>
+                        <h2 id="comment"></h2>
+                    </div>
+                </div>
                 <div id="card">
                     <h1 id="number"></h1>
                     <img id="suit"/>
@@ -32,7 +38,6 @@
                 <button id="high">Higher</button>
                 <button id="low">Lower</button>
             </div>
-            <h1 id="status"></h1>
         </div>
         
         <script src="./js/hilo.js" async defer></script>

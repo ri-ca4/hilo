@@ -31,13 +31,18 @@ function newCard(){
 
 var deck;
 var currentCard;
+var score;
 var dispNum  = document.getElementById('number');
 var dispSuit = document.getElementById('suit');
+var dispScore = document.getElementById('score');
+
 
 function newGame(){
     deck = newDeck();
     shuffle(deck);
     currentCard = newCard(); 
+    score = 0;
+    dispScore.innerHTML= score;
     dispNum.innerHTML = currentCard.value.face;
     dispSuit.setAttribute('src', `img/${currentCard.suit}.png`);
     dispSuit.setAttribute('alt', currentCard.suit);
@@ -47,18 +52,21 @@ newGame();
 
 var high   = document.getElementById('high');
 var low    = document.getElementById('low');
-var stat = document.getElementById('status');
+var comment = document.getElementById('comment');
 
 
 high.addEventListener('click', ()=>{
     nextCard = newCard();
     if(nextCard.value.value == currentCard.value.value){
-        stat.innerHTML='same value'
+        comment.innerHTML='same value'
     }else if(nextCard.value.value < currentCard.value.value){
-        alert('loss')
+        alert('Incorrect, you lose.');
+        comment.innerHTML='';
         newGame();
     }else{
-        stat.innerHTML='correct'
+        comment.innerHTML='correct';
+        score++;
+        dispScore.innerHTML= score;
     }
     currentCard = nextCard;
     dispNum.innerHTML = currentCard.value.face;
@@ -69,12 +77,15 @@ high.addEventListener('click', ()=>{
 low.addEventListener('click', ()=>{
     nextCard = newCard();
     if(nextCard.value.value == currentCard.value.value){
-        stat.innerHTML='same value'
+        comment.innerHTML='same value'
     }else if(nextCard.value.value > currentCard.value.value){
-        alert('loss')
+        alert('Incorrect, you lose.');
+        comment.innerHTML='';
         newGame();
     }else{
-        stat.innerHTML='correct'
+        comment.innerHTML='correct';
+        score++;
+        dispScore.innerHTML= score;
     }
     currentCard = nextCard;
     dispNum.innerHTML = currentCard.value.face;
