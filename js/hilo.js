@@ -68,7 +68,7 @@ high.addEventListener('click', ()=>{
         score++;
         dispScore.innerHTML= score;
     }
-    
+
     if(deck.length == 0){
         alert("Winner!");
         newGame();
@@ -93,6 +93,7 @@ low.addEventListener('click', ()=>{
         score++;
         dispScore.innerHTML= score;
     }
+    
     if(deck.length == 0){
         alert("Winner!");
         newGame();
