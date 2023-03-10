@@ -1,3 +1,5 @@
+/*test*/
+
 var suits  = ['hearts', 'clubs', 'diamonds', 'spades'];
 var values = [{face:'A', value: 1},{face: '2', value: 2},{face: '3', value:3},{face: '4', value: 4},
 {face: '5', value: 5},{face: '6', value: 6},{face: '7', value: 7},{face: '8', value: 8},{face: '9', value: 9},
