@@ -12,6 +12,17 @@
     text-align: center;
 }
 
+#home{
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: larger;
+}
+
+#home a{
+    text-decoration: none;
+}
+
 #intro{
     margin: 5vh 0 0 0;
 }
